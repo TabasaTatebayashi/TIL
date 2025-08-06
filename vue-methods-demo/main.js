@@ -1,0 +1,14 @@
+new Vue({
+    el: "#app",
+    data: {
+        count: 0
+    },
+    methods: {
+        countUp: function(){
+            this.count++;
+        },
+        reset: function(){
+            this.count = 0;
+        }
+    }
+});
