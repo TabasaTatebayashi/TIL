@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Vueステップ⑧ - class切り替え</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16"></script>
+  <style>
+    .positive {
+      color: green;
+      font-weight: bold;
+    }
+    .negative {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+    <div id="app">
+        <h2>成績によって見た目を変える！</h2>
+        <input v-model.number="score" type="number" placeholder="点数を入力">
+        <p v-bind:class="{ positive: score >= 60, negative: score < 60 }">
+            あなたの点数は：{{ score }}点
+        </p>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
