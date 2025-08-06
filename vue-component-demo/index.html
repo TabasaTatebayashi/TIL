@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Vueステップ⑨ - コンポーネント</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>コメント一覧</h2>
+        <comment-item></comment-item>
+        <comment-item></comment-item>
+        <comment-item></comment-item>
+    </div>
+
+    <script>
+        //コンポーネントを定義
+        Vue.component('comment-item', {
+            template: '<p>これはコメントです</p>'
+        });
+    </script>
+</body>
+</html>
