@@ -2,21 +2,27 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>Vueステップ⑨ - コンポーネント</title>
+  <title>Vueステップ⑩ - props</title>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16"></script>
 </head>
 <body>
     <div id="app">
         <h2>コメント一覧</h2>
-        <comment-item></comment-item>
-        <comment-item></comment-item>
-        <comment-item></comment-item>
+        <comment-item text="Vueたのしい!"></comment-item>
+        <comment-item text="今日もがんばる!"></comment-item>
+        <comment-item text="休憩も大事!"></comment-item>
     </div>
 
     <script>
-        //コンポーネントを定義
+        //コンポーネントの定義(propsを使う)
         Vue.component('comment-item', {
-            template: '<p>これはコメントです</p>'
+            props: ['text'],
+            template: '<p>{{ text }}</p>'
+        });
+
+        //Vueアプリ本体
+        new Vue({
+            el: '#app'
         });
     </script>
 </body>
