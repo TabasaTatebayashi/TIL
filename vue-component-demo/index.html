@@ -2,27 +2,27 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>Vueステップ⑩ - props</title>
+  <title>Vueステップ⑪ - $emit</title>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16"></script>
 </head>
 <body>
     <div id="app">
-        <h2>コメント一覧</h2>
-        <comment-item text="Vueたのしい!"></comment-item>
-        <comment-item text="今日もがんばる!"></comment-item>
-        <comment-item text="休憩も大事!"></comment-item>
+        <p>❤️ いいね数：{{ likeCount }}</p>
+        <like-button @increment="likeCount++"></link-button>
     </div>
 
     <script>
-        //コンポーネントの定義(propsを使う)
-        Vue.component('comment-item', {
-            props: ['text'],
-            template: '<p>{{ text }}</p>'
+        //子コンポーネント定義
+        Vue.component('like-button', {
+            template: '<button @click="$emit(\'increment\')">いいね！</button>'
         });
 
-        //Vueアプリ本体
+        //親（Vueインスタンス）
         new Vue({
-            el: '#app'
+            el: '#app',
+            data: {
+                likeCount: 0
+            }
         });
     </script>
 </body>
