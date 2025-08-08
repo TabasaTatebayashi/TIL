@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Vue練習：画像表示</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>{{ message }}</h1>
+
+        <!-- 画像表示 -->
+         <img :src="imagePath" alt="画像表示" style="max-width: 300px;">
+
+         <!-- 画像切り替えボタン -->
+          <br>
+          <button @click="switchImage">画像を切り替える</button>
+    </div>
+
+    <!-- Vueアプリのスクリプト -->
+     <script src="app.js"></script>
+</body>
+</html>
