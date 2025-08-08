@@ -2,22 +2,19 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>Vue練習：画像表示</title>
+  <title>Vue画像コンポーネント練習</title>
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
     <div id="app">
-        <h1>{{ message }}</h1>
+        <h1>画像表示コンポーネント</h1>
 
-        <!-- 画像表示 -->
-         <img :src="imagePath" alt="画像表示" style="max-width: 300px;">
+        <image-box :img-path="imagePath"></image-box>
 
-         <!-- 画像切り替えボタン -->
-          <br>
-          <button @click="switchImage">画像を切り替える</button>
+        <br>
+        <button @click="switchImage">画像を切り替える</button>
     </div>
 
-    <!-- Vueアプリのスクリプト -->
-     <script src="app.js"></script>
+    <script type="module" src="app.js"></script>
 </body>
 </html>

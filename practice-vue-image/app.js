@@ -1,21 +1,26 @@
-const {createApp, ref } = Vue;
+import imageBox from "./components/image-box.js";
+const { createApp, ref } = Vue;
 
-createApp({
-    setup(){
-        const message = ref("Vueで画像を表示してみよう!");
+const app = createApp({
+    setup() {
         const imagePath = ref("images/bg_1.webp");
 
         const switchImage = () => {
-            imagePath.value =
-                imagePath.value === "images/bg_1.webp"
-                    ? "images/btn_1.png"
-                    : "images/bg_1.webp";
+            imagePath.value = imagePath.value === "images/bg_1.webp"
+                ? "images/btn_1.png"
+                : "images/bg_1.webp";
         };
 
         return {
-            message,
             imagePath,
             switchImage,
         };
-    },
-}).mount("#app");
+    }
+});
+
+
+//コンポーネント登録
+app.component("image-box", imageBox);
+
+//Vueアプリをマウント
+prompt.mount("#app");
